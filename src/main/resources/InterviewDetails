@@ -1,0 +1,8 @@
+--> array --> subarray --> 1,2,3,5,7,10 --> find 7
+--> post vs put
+--> cyclic dependency / how to resolve
+--> stream add odds
+--> two default methods/ diamond problem
+--> java 8 new additions
+--> map hashcode
+--> Singleton
