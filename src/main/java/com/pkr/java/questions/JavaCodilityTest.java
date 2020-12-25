@@ -47,11 +47,10 @@ public class JavaCodilityTest {
 				break;
 			}
 		}
-		return buildString(index, number);
+		return buildStringForInsertingFive(index, number);
 	}
 
-	//6471 1
-	private static int buildString(int index, String number) {
+	private static int buildStringForInsertingFive(int index, String number) {
 		if(index == 0) {
 			return Integer.valueOf("5"+number);
 		} else if(index == -1){
