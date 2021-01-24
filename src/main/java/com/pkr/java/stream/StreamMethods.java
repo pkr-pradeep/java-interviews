@@ -25,11 +25,12 @@ public class StreamMethods {
 	//further operation cant be done later on.
 	//https://www.baeldung.com/java-stream-operated-upon-or-closed-exception
 	public void usingForEach() {
+		StreamMethods strem = new StreamMethods();
 		Supplier<Stream<Integer>> streamSupplier 
 		  = () -> Stream.of(1,3,2,4);
 		// printing the elements of stream in encounter order
 		  streamSupplier.get().forEachOrdered(System.out::println);
-		  streamSupplier.get().forEach(StreamMethods::subtract);
+		  streamSupplier.get().forEach(strem::subtract);
 	}
 
 	public static void usingMap() {
@@ -61,7 +62,8 @@ public class StreamMethods {
 		listOfString.forEach(System.out::print);
 		Set<String> set = supplierStream.get().collect(Collectors.toSet());
 		System.out.println("\nSet:"+set);
-		Map<String, String> map = supplierStream.get().collect(Collectors.toMap(String::strip, String::toUpperCase));
+		Map<String, String> map =
+				supplierStream.get().collect(Collectors.toMap(String::toLowerCase, String::toUpperCase));
 		System.out.println("map:"+map);
 	}
 	
@@ -86,7 +88,7 @@ public class StreamMethods {
 		return x;
 	}
 
-	public static int subtract(int x) {
+	public int subtract(int x) {
 		if(x == 2) {
 			System.out.println(x);
 			return x;
