@@ -1,5 +1,6 @@
 package com.pkr.java.stream;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -18,6 +19,15 @@ public class StreamMethods {
 		usingFilter();
 		usingFindFirst();
 		usingMap_2();
+		usingMapString();
+		usingPeek();
+	}
+
+	private static void usingPeek() {
+		String[] names = {"Pradeep", "works", "hard"};
+		//Arrays.asList(names).stream().filter(x -> x.charAt(0)=='P').peek(System.out::println).count();
+		Arrays.asList(names).stream().sorted().forEach(System.out::println);
+		//System.out.println(count);
 	}
 
 	//Supplier is used because I have used forEach on stream twice
@@ -42,6 +52,13 @@ public class StreamMethods {
 	public static void usingMap_1() {
 		Stream<Integer> stream = Stream.of(1,3,2,4);
 		List<Integer> list = stream.map(StreamMethods::add).collect(Collectors.toList());
+		System.out.println(list);
+	}
+	
+	public static void usingMapString() {
+		Stream<String> stream = Stream.of("Name", "Game", "Shame", "Hen", "Pink");
+		//get all those strings with last char as 'e'
+		List<String> list = stream.filter(x -> 'e' == x.charAt(x.length()-1)).map(String::toUpperCase).collect(Collectors.toList());
 		System.out.println(list);
 	}
 	
@@ -75,7 +92,7 @@ public class StreamMethods {
 	}
 	
 	public static void usingFindFirst() {
-		Supplier<Stream<Integer>> supplierStream = () ->  Stream.of();
+		Supplier<Stream<Integer>> supplierStream = () ->  Stream.of(7,7,4,7);
 		int firstNum = supplierStream.get().findFirst().orElse(0);
 		System.out.println(firstNum);
 	}

@@ -2,6 +2,8 @@ package com.pkr.java.stream;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class StreamBasics {
@@ -17,6 +19,15 @@ public class StreamBasics {
 		System.out.println(streamFromIndvidualObject.filter(x -> x.getEmployeeName().equals("Munna")).toArray().length);	
 		//summation of all even numbers in the list above
 		System.out.println(stream.filter(x -> x % 2 == 0).mapToInt(x -> x.intValue()).sum());
+		
+		
+		String abc = "abhhfddc";
+		String[] aaa = abc.split("");
+		Map<String, Long> map = Arrays.asList(aaa).stream().collect(Collectors.groupingBy((String x) -> x, Collectors.counting()));
+		System.out.println(map);
+		
 	}
+	
+	
 
 }

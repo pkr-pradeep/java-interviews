@@ -1,0 +1,82 @@
+Hi from Pawan
+
+hi Pradeep
+
+
+Student - id, name, List<Course> -Immutable
+Course - id, name - POJO
+
+public final class Student {
+ private final int id;
+ private final String name;
+ private final List<Course> courses;
+ //getters//setters
+ 
+ public Student( int id, String name, List<Course> courses) {
+  this.id = id;
+  this.name = name;
+  this.courses = courses;
+ }
+ 
+ public int getId() {
+  return id;
+ }
+ 
+ public String getName() {
+  return name;
+ }
+ 
+ public List<Course> getCourses() {
+  return courses;
+ }
+ 
+ public static void main(.....) {
+ 
+ 	Course c1 = new Course(1,"Math");
+  List<Course> courseList = new ArrayList<Course>();
+  courseList.add(c1);
+ 
+ 	Student s = new Student(1,"Pawan", courseList);
+  c1.setCourseName("English");
+  c2
+  courseList.add(c2);
+  
+  String str = new String("pradeep");
+  str = new String("Pawan");
+ 
+ 
+ }
+}
+
+APPLE,ORANGE --> array -> sort
+HI,HELLO -> HELLO HI
+ABC,DEF
+HI,HELLO ->
+DEF,ABC
+
+
+
+
+List<String> listLines
+HI, ABC
+str.split(",");
+str[0], str[1]
+
+str[i].compareTo(str[j])
+temp = 
+
+  
+String sortString(String str) {
+  String temp = null;
+ strary = str.split(",");
+ if(str[0].compareTo(str[1]) > 0) {
+	 temp = str[1];
+   str[1] = str[0];
+   str[0] = temp;
+ }
+  
+}
+
+
+
+
